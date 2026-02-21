@@ -4,15 +4,16 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 let lightbox = null;
 
 export function createGallery(images) {
-   
-const gallery = document.querySelector('ul.gallery');
+  const gallery = document.querySelector('ul.gallery');
 
-    const markup = images.map(img =>
-      `<li class="gallery-item">
+  const markup = images
+    .map(
+      img =>
+        `<li class="gallery-item">
         <a class="gallery-link" href="${img.largeImageURL}">
           <img class="gallery-image" src="${img.webformatURL}" alt="${img.tags}"/>
           </a>
-        
+
             <ul class="info-list">
               <li class="info-item">
                 <span class="info-item-label">Likes ${img.likes}</span>
@@ -26,21 +27,18 @@ const gallery = document.querySelector('ul.gallery');
               <li class="info-item">
                 <span class="info-item-label">Downloads ${img.downloads}</span>
               </li>
-                
-     
+
         </ul>
       </li>`
-    ).join('');
-    
-    
-   
-    gallery.innerHTML = markup;
-    if (!lightbox) {
-    lightbox = new SimpleLightbox('.gallery a');
-    
-  }
-lightbox.refresh();
+    )
+    .join('');
 
+  gallery.insertAdjacentHTML('beforeend', markup);
+  if (!lightbox) {
+    lightbox = new SimpleLightbox('.gallery a');
+  }
+
+  lightbox.refresh();
 }
 
 export function clearGallery() {
@@ -64,3 +62,17 @@ export function hideLoader() {
   }
 }
 
+export function showLoadMoreButton() {
+  const loadMoreButton = document.querySelector('.Load');
+  if (loadMoreButton) {
+    loadMoreButton.classList.remove('is-hidden');
+    ``;
+  }
+}
+
+export function hideLoadMoreButton() {
+  const loadMoreButton = document.querySelector('.Load');
+  if (loadMoreButton) {
+    loadMoreButton.classList.add('is-hidden');
+  }
+}

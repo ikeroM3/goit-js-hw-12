@@ -6,10 +6,10 @@
 */
 /* Common styles */
 
-
 /* Sections style */
 
 @import url('./loader.css');
 @import url('./gallery.css');
 @import url('./base.css');
 @import url('./form.css');
+@import url('./Load-bth.css');

@@ -1,0 +1,15 @@
+.Load {
+  width: 150px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.Load:hover {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
