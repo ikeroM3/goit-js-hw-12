@@ -66,7 +66,6 @@ export function showLoadMoreButton() {
   const loadMoreButton = document.querySelector('.Load');
   if (loadMoreButton) {
     loadMoreButton.classList.remove('is-hidden');
-    ``;
   }
 }
 
